@@ -6,8 +6,7 @@
     "gender": "male",
     "address": "1234 Anywhere St.",
     "city": "Phoenix",
-    "orderTotal": 40.99,
-    "orders": []
+    "orderTotal": 40.99
   },
   {
     "id": 2,
@@ -16,8 +15,7 @@
     "gender": "female",
     "address": "345 Cedar Point Ave.",
     "city": "Los Angeles",
-    "orderTotal": 89.99,
-    "orders": []
+    "orderTotal": 89.99
   },
   {
     "id": 3,
@@ -26,8 +24,7 @@
     "gender": "male",
     "address": "1822 Long Bay Dr.",
     "city": "Las Vegas",
-    "orderTotal": 29.99,
-    "orders": []
+    "orderTotal": 29.99
   },
   {
     "id": 4,
@@ -36,12 +33,7 @@
     "gender": "female",
     "address": "79455 Pinetop Way",
     "city": "Seattle",
-    "state": {
-        "abbreviation": "WA",
-        "name": " Washington "
-    },
-    "orderTotal": 15.99,
-    "orders": []
+    "orderTotal": 15.99
   },
   {
     "id": 5,
@@ -50,8 +42,7 @@
     "gender": "male",
     "address": "576 Crescent Blvd.",
     "city": "Chandler",
-    "orderTotal": 29.99,
-    "orders": []
+    "orderTotal": 29.99
   },
   {
     "id": 6,
@@ -60,8 +51,7 @@
     "gender": "male",
     "address": "9874 Center St.",
     "city": "Mountain View ",
-    "orderTotal": 49.99,
-    "orders": []
+    "orderTotal": 49.99
   },
   {
     "id": 7,
@@ -70,8 +60,7 @@
     "gender": "male",
     "address": "9812 Builtway Appt #1",
     "city": "Mountain View",
-    "orderTotal": 19.99,
-    "orders": []
+    "orderTotal": 19.99
   },
   {
     "id": 8,
@@ -80,8 +69,7 @@
     "gender": "female",
     "address": "4651 Tuvo St.",
     "city": "Chandler",
-    "orderTotal": 9.99,
-    "orders": []
+    "orderTotal": 9.99
   },
   {
     "id": 9,
@@ -90,8 +78,7 @@
     "gender": "male",
     "address": "66 Ray St.",
     "city": "Orlando",
-    "orderTotal": 149.99,
-    "orders": []
+    "orderTotal": 149.99
   },
   {
     "id": 10,
@@ -100,8 +87,7 @@
     "gender": "female",
     "address": "1455 Chandler Blvd.",
     "city": "Atlanta",
-    "orderTotal": 299.99,
-    "orders": []
+    "orderTotal": 299.99
   },
   {
     "id": 11,
@@ -110,7 +96,6 @@
     "gender": "male",
     "address": "888 Central St.",
     "city": "San Francisco",
-    "orderTotal": 29.98,
-    "orders": []
+    "orderTotal": 29.98
   }
 ]
