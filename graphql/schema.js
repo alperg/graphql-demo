@@ -95,8 +95,9 @@ const schema = new GraphQLSchema({
             description: 'Id of the customer'
           }
         },
-        resolve(_, {}, { db }) {
-          return db.orders.find(o => o.customerId === customerId);
+        resolve(_,  {customerId }, { db }) {
+          const orders =  db.orders.find(o => o.customerId.toString() === customerId);
+          return orders && orders.orderItems ? orders.orderItems : [];
         }
       }
     }

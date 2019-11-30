@@ -34,6 +34,7 @@
   for (const c of data.customers) {
     const li = document.createElement('li');
     li.innerText = `${c.firstName} ${c.lastName} (${c.orders.length ? c.orders.length : 'No'} orders)`;
+    li.setAttribute('data-id', c.id);
 
     const ol = document.createElement('ol');
     for (const o of c.orders) {
@@ -46,4 +47,31 @@
     element.appendChild(li);
   }
 
+  element.addEventListener("click", function(e) {
+    if (event.target.matches('[data-id]')) {
+      const customerId = e.target.getAttribute('data-id');
+      
+      // GraphQL query
+      const query = `{
+        orders(customerId: ${customerId}) {
+          id
+          productName
+          itemCost
+        }
+      }`;
+
+      // Send the request
+      fetch('/graphql', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          query
+        })
+      })
+      .then(res => res.json())
+      .then(data => console.log(data.data.orders));
+    }
+  });
 })();
