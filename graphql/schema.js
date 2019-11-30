@@ -1,19 +1,11 @@
 const { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLFloat, GraphQLList, GraphQLID, GraphQLNonNull } = require('graphql');
 
-const OrderItems = new GraphQLObjectType({
-  name: 'OrderItems',
+const Order = new GraphQLObjectType({
+  name: 'Order',
   fields: {
     id: { type: GraphQLID },
     productName: { type: GraphQLString },
     itemCost: { type: GraphQLFloat }
-  }
-});
-
-const Order = new GraphQLObjectType({
-  name: 'Order',
-  fields: {
-    customerId: { type: GraphQLID },
-    orderItems: { type: new GraphQLList(OrderItems) }
   }
 });
 
@@ -70,13 +62,14 @@ const schema = new GraphQLSchema({
         resolve(_, {}, { db }) {
           const c = db.customers.map(c => {
             const o = db.orders.filter(o => o.customerId === c.id);
-            if(o && o[0] && o[0].orderItems) {
-              c.orders = o[0].orderItems || [];
+            if(o && o[0]) {
+              c.orders = o[0].orderItems;
             } else {
               c.orders = [];
             }
             return c;
           });
+          // console.log(JSON.stringify(c[0], null, 2));
           return c;
         }
       },

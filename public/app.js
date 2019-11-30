@@ -11,11 +11,9 @@
       city
       orderTotal
       orders {
-        orderItems {
-          id
-          productName
-          itemCost
-        }
+        id
+        productName
+        itemCost
       }
     }
   }`;
@@ -35,7 +33,16 @@
   // Create list item for each customer
   for (const c of data.customers) {
     const li = document.createElement('li');
-    li.innerText = `${c.firstName} (${c.orders.length} orders)`;
+    li.innerText = `${c.firstName} ${c.lastName} (${c.orders.length ? c.orders.length : 'No'} orders)`;
+
+    const ol = document.createElement('ol');
+    for (const o of c.orders) {
+      const li = document.createElement('li');
+      li.innerText = `${o.productName}`;
+      ol.appendChild(li);
+    }
+    li.appendChild(ol);
+    
     element.appendChild(li);
   }
 
