@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-weight: 300;	
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI';
+}
+
+header {
+  padding: 16px;
+  color: #e6ebfd;
+  background-color: #6a7085;
+}
+
+ul {
+  padding: 0;
+  margin: 10px;
+}
+
+ul li {
+  list-style: none;
+  color: #444;
+  height: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px 5px 0 5px;
+  line-height: 22px;
+}
