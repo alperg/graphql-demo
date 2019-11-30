@@ -33,16 +33,20 @@
   // Create list item for each customer
   for (const c of data.customers) {
     const li = document.createElement('li');
-    li.innerText = `${c.firstName} ${c.lastName} (${c.orders.length ? c.orders.length : 'No'} orders)`;
-    li.setAttribute('data-id', c.id);
-
-    const ol = document.createElement('ol');
+    const span = document.createElement('span');
+    span.innerText = `${c.firstName} ${c.lastName} (${c.orders.length ? c.orders.length : 'No'} orders)`;
+    span.setAttribute('class', 'list-item');
+    span.setAttribute('data-id', c.id);
+    li.appendChild(span)
+    
+    const ul = document.createElement('ul');
+    ul.setAttribute('id', 'orders');
     for (const o of c.orders) {
       const li = document.createElement('li');
       li.innerText = `${o.productName}`;
-      ol.appendChild(li);
+      ul.appendChild(li);
     }
-    li.appendChild(ol);
+    li.appendChild(ul);
     
     element.appendChild(li);
   }
@@ -71,7 +75,28 @@
         })
       })
       .then(res => res.json())
-      .then(data => console.log(data.data.orders));
+      .then(data => {
+        console.log(data.data.orders);
+        // Get reference to <ul> element
+        const element = document.querySelector('#details');
+        element.style.display = 'block';
+        // Delete all nodes
+        while (element.firstChild) {
+          element.removeChild(element.firstChild);
+        }
+        if(data.data.orders.length > 0) {
+          // Create list item for each order
+          for (const o of data.data.orders) {
+            const li = document.createElement('li');
+            li.innerHTML = `<b>Product:</b> ${o.productName}, <b>Cost:</b> ${o.itemCost}`;
+            element.appendChild(li);
+          }
+        } else {
+          const h3 = document.createElement('h3');
+          h3.innerText = 'No orders for this customer';
+          element.appendChild(h3);
+        }
+      });
     }
   });
 })();

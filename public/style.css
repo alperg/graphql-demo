@@ -14,12 +14,14 @@ header {
   background-color: #6a7085;
 }
 
-ul {
+ul#customers {
   padding: 0;
   margin: 10px;
+  width: 250px;
+  float: left;
 }
 
-ul li {
+ul#customers li {
   list-style: none;
   color: #444;
   font-size: 12px;
@@ -28,7 +30,23 @@ ul li {
   line-height: 22px;
 }
 
-ol li {
+ul#customers li .list-item {
+  padding: 4px;
+  margin-bottom: 6px;
+  border-bottom: 1px dotted #ccc;
+  cursor: pointer;
+}
+
+ul#customers li .list-item:hover {
+  border-bottom: 1px dotted #9e0b0b;
+  background-color: #f8e02b;
+}
+
+ul#orders {
+  margin-top: 10px;
+}
+
+ul#orders li {
   list-style: decimal;
   margin-left: 25px;
   color: #444;
@@ -36,4 +54,24 @@ ol li {
   font-weight: normal;
   padding: 0 5px 0 5px;
   line-height: 14px;
+  cursor: inherit;
+}
+
+ul#details {
+  padding: 20px;
+  margin-top: 40px;
+  width: 210px;
+  float: left;
+  box-shadow: 0 2px 8px 2px #ccc;
+  border-radius: 10px;
+  display: none;
+}
+
+ul#details li {
+  list-style: none;
+  color: #666;
+  font-size: 10px;
+  font-weight: normal;
+  padding: 4px 5px 0 5px;
+  line-height: 20px;
 }
