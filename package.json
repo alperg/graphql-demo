@@ -1,0 +1,35 @@
+{
+  "name": "graphql-demo",
+  "version": "1.0.0",
+  "description": "GraphQL Demo App",
+  "main": "server.js",
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run start:server\" \"npm run start:dev\"",
+    "start:server": "nodemon server.js",
+    "start:dev": "parcel public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alperg/graphql-demo.git"
+  },
+  "keywords": [],
+  "author": "Alper Gokcehan <mail@alperg.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alperg/graphql-demo/issues"
+  },
+  "homepage": "https://github.com/alperg/graphql-demo#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.8"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "nodemon": "^2.0.1",
+    "parcel-bundler": "^1.12.4"
+  },
+  "browserslist": [
+    "last 1 Chrome versions"
+  ]
+}
