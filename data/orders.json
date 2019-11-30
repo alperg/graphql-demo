@@ -45,8 +45,8 @@
   {
     "customerId": 7,
     "orderItems": [
-        {"id": 14, "productName": "Baseball", "itemCost": 9.99},
-        {"id": 15, "productName": "Bat", "itemCost": 19.99}
+        {"id": 1, "productName": "Baseball", "itemCost": 9.99},
+        {"id": 2, "productName": "Bat", "itemCost": 19.99}
     ]
   },
   {
@@ -67,8 +67,8 @@
   {
     "customerId": 10,
     "orderItems": [
-        {"id": 21, "productName": "Baseball", "itemCost": 9.99},
-        {"id": 22, "productName": "Bat", "itemCost": 19.99}
+        {"id": 1, "productName": "Baseball", "itemCost": 9.99},
+        {"id": 2, "productName": "Bat", "itemCost": 19.99}
     ]
   }
 ]
